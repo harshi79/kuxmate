@@ -1,0 +1,24 @@
+{
+  "name": "kuxmate",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "packageManager": "pnpm@12.5.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "pnpm --recursive --if-present build",
+    "check": "pnpm exec biome check . && pnpm typecheck && pnpm test",
+    "db:generate": "pnpm --filter @kuxmate/db db:generate",
+    "db:migrate": "pnpm --filter @kuxmate/db db:migrate",
+    "dev": "pnpm --parallel --filter @kuxmate/api --filter @kuxmate/web dev",
+    "format": "pnpm exec biome format --write .",
+    "lint": "pnpm exec biome lint .",
+    "test": "pnpm --recursive --if-present test",
+    "typecheck": "pnpm --recursive --if-present typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14"
+  }
+}
